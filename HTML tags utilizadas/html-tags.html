@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos HTML</title>
+</head>
+
+<!-- 
+    A Tag <style> dentro da Tag <head> permite definir estilos CSS (Design visual) para os elementos da página HTML, contudo não é uma boa prática!
+    é recomendado definir as classes CSS em um arquivo separado, para melhorar a manutenção e orgnização do código 
+-->
+
+<!-- Tag <style >>>>> -->
+<style>
+    .classTextoLaranja {
+        color: orange;
+    }
+
+    .classTextoAzul {
+        color: blue;
+    }
+
+    .classTextoNegrito {
+        font-weight: bold;
+    }
+
+    #idTextoItalico {
+        font-style: italic;
+    }
+
+    .classRemovePontos {
+        list-style-type: none;
+    }
+</style><!-- <<<<< -->
+
+<body>
+
+    <!-- Tag <p> para parágrafos com uso do atributo "class" para estilo CSS (Design) >>>>> -->
+    <p class="classTextoLaranja classTextoNegrito">Parágrafo 1 ...</p>
+    <p class="classTextoAzul classTextoNegrito">Parágrafo 2 ...</p> <!-- <<<<<-->
+
+    <!-- Tag <p> para parágrafos com uso do atributo "id" para estilo CSS (Design) >>>>> -->
+    <p id="idTextoItalico">Parágrafo 3 ...</p> <!-- <<<<<-->
+
+    <!-- Tag <hxxx> para titulos de textos >>>> -->
+    <h1>Titulo 1</h1>
+    <p>Texto...</p>
+
+    <h2>Titulo 2</h2>
+    <p>Texto...</p>
+
+    <h3>Titulo 3</h3>
+    <p>Texto...</p> <!-- <<<<<-->
+
+    <!-- Tag <a> para links para outra pagina ou para sessões da mesma página -->
+    <a href="http://google.com">Link externo, não atrindo uma nova aba</a>
+    <br>
+    <a href="http://google.com" target="_blank">Link externo, atrindo uma nova aba</a> <!-- <<<<<-->
+
+    <!-- Tags variadas -->
+    <!-- <br> pular linha (Break line) -->
+    <p>Texto...</p>
+    <br>
+    <!-- <hr> traço horizintal -->
+    <p>Texto...</p>
+    <hr><!-- <<<<<-->
+
+    <!-- Tag <img> para inserir imagem na página. o atributo src pode receber o endereço de uma imagem externa, 
+    ou o caminho da imagem no servido onde a pagina HTML está hospedada.
+    com o atributo "width" podemos definir a largura e com o "height" a altura -->
+    <img src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg" width="200px"
+        height="150px" alt="Imagem externa">
+    <br>
+    <img width="200px" src="./imagens/nivel3/Fiat-Pulse_1.jpg"
+        alt="Imagem interna no servidor web, neste caso, não foi encontrada"><!-- <<<<<-->
+
+    <!-- tag <ul> lista 1 -->
+    <ul class="classRemovePontos">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <!-- tag <ol> lista 2 -->
+    <ol>
+        <li>Item a</li>
+        <li>Item b</li>
+        <li>Item c</li>
+    </ol>
+    <!-- tag <dl> lista 3 -->
+    <dl>
+        <dt>Item a</dt>
+        <dd>Item a.1</dd>
+        <dt>Item b</dt>
+        <dd>Item b.1</dd>
+    </dl> <!-- <<<<<-->
+
+    <!-- Tag <table>, <tr> linha, (td) coluna-->
+    <table border="1">
+        <tr>
+            <th>Titulo 1</th>
+            <th>Titulo 2</th>
+            <th>Titulo 3</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>11</td>
+            <td>111</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>22</td>
+            <td>222</td>
+        </tr>
+    </table><br> <!-- <<<<<-->
+
+    <!-- Tag <input> usado para receber texto curto, senha, numero etc-->
+    <input type="text">
+    <br><br>
+    <input type="password">
+    <br><br>
+    <input type="email">
+    <br><br>
+    <input type="number">
+    <br><br>
+    <input type="radio" name="sexo" value="M">
+    <label for="M">Masculino</label><br>
+    <input type="radio" name="sexo" value="F">
+    <label for="F">Feminino</label><br>
+    <input type="radio" name="sexo" value="X">
+    <label for="X">Neutro</label>
+    <br><br>
+    <input type="checkbox" name="sexo" value="M">
+    <label for="M">Masculino</label><br>
+    <input type="checkbox" name="sexo" value="F">
+    <label for="F">Feminino</label><br>
+    <input type="checkbox" name="sexo" value="X">
+    <label for="X">Neutro</label>
+    <br><br>
+    <!-- <<<<<-->
+
+    <!-- Tag <select> (DROP DOWN, COMBO BOX) usada para dar opções limitadas de seleção -->
+    <select>
+        <option value="1">Masculino</option>
+        <option value="2">Feminino</option>
+        <option value="3">Netro</option>
+    </select>
+    <br><br><br><!-- <<<<<-->
+
+    <!-- Tag <textarea> usado para textos longos-->
+    <textarea rows="5" cols="40" style="resize: none;">
+    </textarea>
+    <br><br><!-- <<<<<-->
+
+    <!-- Tag <form> usado para receber input (texto, info ..) do usuario -->
+    <form action="/action_page.php">
+        <label>Email:</label><br>
+        <input type="text" id="idEmail"><br>
+        <label>Senha:</label><br>
+        <input type="password" id="idSenha"><br><br>
+
+        <input type="submit" value="Fazer login">
+    </form><br><br> <!-- <<<<<-->
+
+    <form action="/action_page.php">
+        <label>Nome Completo:</label><br>
+        <input type="text" id="idEmail"><br>
+        <label>Email:</label><br>
+        <input type="email" id="idEmail"><br>
+        <label>Senha:</label><br>
+        <input type="password" id="idSenha"><br><br>
+
+        <input type="submit" value="Fazer cadastro">
+    </form> <!-- <<<<<-->
+
+</body>
+
+</html>
