@@ -57,3 +57,16 @@ var filho =elemento.appendChild(filho);
 ***parentElement*** : Subir um elemento na árvore do DOM
 
 IIFE : (Immediately Invoked Function Expression) É um Design Pattern também conhecido como Self-Executing Anonymous Function e contém duas partes principais. A primeira é a função anônima cujo escopo léxico é encapsulado entre parênteses. IMPEDE QUE A REGRA DE NEGÓCIO FIQUE A DISPOSIÇÃO/ACESSÍVEL NO DEVTOOLS (F12)
+
+
+
+**Palavra-chave**	  **Descrição**
+var	                    Declara uma variável
+let	                    Declara uma variável de bloco
+const	                Declara uma constante de bloco
+if	                    Marca um bloco de instruções a serem executadas em uma condição
+switch	                Marca um bloco de instruções a serem executadas em diferentes casos
+for	                    Marca um bloco de instruções a serem executadas em um loop
+function	            Declara uma função
+return	                Sai de uma função
+try	                    Implementa o tratamento de erros para um bloco de instruções
