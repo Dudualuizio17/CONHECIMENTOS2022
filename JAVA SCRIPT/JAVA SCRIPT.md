@@ -70,3 +70,84 @@ for	                    Marca um bloco de instruções a serem executadas em um 
 function	            Declara uma função
 return	                Sai de uma função
 try	                    Implementa o tratamento de erros para um bloco de instruções
+
+
+**Números JavaScript**
+JavaScript tem apenas um tipo de números.
+
+Os números podem ser escritos com ou sem decimais:
+
+Exemplo
+let x1 = 34.00;     // Written with decimals
+let x2 = 34;        // Written without decimals
+
+**Booleanos JavaScript**
+Booleanos podem ter apenas dois valores: trueou false.
+
+Exemplo
+let x = 5;
+let y = 5;
+let z = 6;
+(x == y)       // Returns true
+(x == z)       // Returns false
+
+**Matrizes JavaScript**
+Matrizes JavaScript são escritas com colchetes.
+
+Os itens da matriz são separados por vírgulas.
+
+O código a seguir declara (cria) um array chamado cars, contendo três itens (nomes dos carros):
+
+Exemplo
+const cars = ["Saab", "Volvo", "BMW"];
+
+**Objetos JavaScript**
+Objetos JavaScript são escritos com chaves {}.
+
+As propriedades do objeto são escritas como pares nome:valor, separados por vírgulas.
+
+Exemplo
+const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+**Eventos JavaScript**
+
+Eventos HTML são "coisas" que acontecem com elementos HTML.
+
+Quando o JavaScript é usado em páginas HTML, o JavaScript pode "reagir" a esses eventos.
+
+Eventos HTML
+Um evento HTML pode ser algo que o navegador faz ou algo que um usuário faz.
+
+Aqui estão alguns exemplos de eventos HTML:
+
+Uma página da Web HTML terminou de carregar
+Um campo de entrada HTML foi alterado
+Um botão HTML foi clicado
+Muitas vezes, quando os eventos acontecem, você pode querer fazer alguma coisa.
+
+JavaScript permite que você execute código quando os eventos são detectados.
+
+HTML permite que atributos do manipulador de eventos, com código JavaScript , sejam adicionados aos elementos HTML.
+
+Com aspas simples:
+
+<element event='some JavaScript'>
+Com aspas duplas:
+
+<element event="some JavaScript">
+No exemplo a seguir, um onclickatributo (com código) é adicionado a um <button>elemento:
+
+Exemplo
+<button onclick="document.getElementById('demo').innerHTML = Date()">The time is?</button>
+
+**Eventos HTML comuns**
+Aqui está uma lista de alguns eventos HTML comuns:
+
+Event	                       Description
+**onchange**	                   An HTML element has been changed                 (Elemento html alterado)
+**onclick**	                       The user clicks an HTML element                  (clicar em um elemento)
+**onmouseover**	                   The user moves the mouse over an HTML element    (ao mover o Mause)
+**onmouseout**	                   The user moves the mouse away from an HTML element (Mover o mouse fora)
+**onkeydown**	                   The user pushes a keyboard key                     (Pressionando tecla)
+**onload**	                       The browser has finished loading the page          (Carregar a página)
+
