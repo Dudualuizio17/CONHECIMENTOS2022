@@ -190,3 +190,123 @@ No exemplo a seguir, um onclickatributo (com código) é adicionado a um <button
   </body>
 
   </html>
+
+
+  //JavaScript String Properties
+
+  (Retornando o tamanho da string)
+
+  <p>The length property returns the length of a string:</p>
+
+  <p id="demo"></p>
+
+  <script>
+    let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    document.getElementById("demo").innerHTML = text.length;
+  </script>
+
+  //Acrescentando "ASPAS" na String.
+
+  <p id="demo"></p>
+
+  <script>
+    let text = "We are the so-called \"Vikings\" from the north.";
+    document.getElementById("demo").innerHTML = text; 
+  </script>
+  resultado: We are the so-called "Vikings" from the north.
+
+  //JavaScript String slice()
+
+  slice() extrai parte da string e retorna a parte extraída em uma nova string.
+
+  Exemplo
+  Corte uma parte de uma corda da posição 7 para a posição 13 (13 não incluída):
+
+  <p id="demo"></p>
+
+  <script>
+    let str = "Apple, Banana, Kiwi";
+    document.getElementById("demo").innerHTML = str.slice(7, 13); 
+  </script>
+
+  //Substituindo o conteúdo da string
+  O replace() método substitui um valor especificado por outro valor em uma string:
+
+  Exemplo
+  let text = "Please visit Microsoft!";
+  let newText = text.replace("Microsoft", "W3Schools");
+
+  <button onclick="myFunction()">Try it</button>
+
+<p id="demo">Please visit Microsoft!</p>
+
+<script>
+function myFunction() {
+  let text = document.getElementById("demo").innerHTML;
+  document.getElementById("demo").innerHTML =
+  text.replace("Microsoft","W3Schools");
+}
+</script>
+
+Para substituir todas as correspondências, use uma expressão regular com um /g sinalizador 
+(correspondência global):
+
+Exemplo
+let text = "Please visit Microsoft and Microsoft!";
+let newText = text.replace(/Microsoft/g, "W3Schools");
+
+<p>Replace all occurrences of "Microsoft" with "W3Schools" in the paragraph below:</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo">Please visit Microsoft and Microsoft!</p>
+
+<script>
+function myFunction() {
+  let text = document.getElementById("demo").innerHTML; 
+  document.getElementById("demo").innerHTML =
+  text.replace(/Microsoft/g,"W3Schools");
+}
+</script>
+
+//Convertendo para Maiúsculas e Minúsculas
+
+String JavaScript para UpperCase()
+Exemplo
+
+let text1 = "Hello World!";
+let text2 = text1.toUpperCase();
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo">Hello World!</p>
+
+<script>
+function myFunction() {
+  let text = document.getElementById("demo").innerHTML;
+  document.getElementById("demo").innerHTML =
+  text.toUpperCase();
+}
+</script>
+
+String JavaScript para LowerCase()
+Exemplo
+
+let text1 = "Hello World!";       // String
+let text2 = text1.toLowerCase();  // text2 is text1 converted to lower
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo">Hello World!</p>
+
+<script>
+function myFunction() {
+  let text = document.getElementById("demo").innerHTML;
+  document.getElementById("demo").innerHTML =
+  text.toLowerCase();
+}
+</script>
+
+
+
+

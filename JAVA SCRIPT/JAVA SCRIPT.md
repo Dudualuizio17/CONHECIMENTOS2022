@@ -151,3 +151,92 @@ Event	                       Description
 **onkeydown**	                   The user pushes a keyboard key                     (Pressionando tecla)
 **onload**	                       The browser has finished loading the page          (Carregar a página)
 
+
+**JavaScript Strings**
+As strings JavaScript são para armazenar e manipular texto.
+Uma string JavaScript é zero ou mais caracteres escritos entre aspas.
+
+Para descobrir o tamanho de uma string, use a ***length*** propriedade interna:
+
+Exemplo
+let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let length = text.length;
+<p>The length property returns the length of a string:</p>
+
+<p id="demo"></p>
+
+<script>
+let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+document.getElementById("demo").innerHTML = text.length;
+</script>
+
+
+Code	           Result
+\b	               Backspace
+\f	               Form Feed
+\n	               New Line
+\r	               Carriage Return
+\t	               Horizontal Tabulator
+\v	               Vertical Tabulator
+
+
+**Métodos e propriedades de string**
+
+Valores primitivos, como "John Doe", não podem ter propriedades ou métodos (porque não são objetos).
+
+Mas com JavaScript, métodos e propriedades também estão disponíveis para valores primitivos, porque JavaScript trata valores primitivos como objetos ao executar métodos e propriedades.
+
+Comprimento da String JavaScript
+A length propriedade retorna o comprimento de uma string:
+
+***Exemplo***
+let txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let length = txt.length;
+
+<p id="demo"></p>
+
+<script>
+let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+document.getElementById("demo").innerHTML = text.length;
+</script>
+
+
+**Extraindo Partes de String**
+Existem 3 métodos para extrair uma parte de uma string:
+
+slice(start, end)
+substring(start, end)
+substr(start, length)
+Fatia de string JavaScript()
+slice()extrai uma parte de uma string e retorna a parte extraída em uma nova string.
+
+O método tem 2 parâmetros: a posição inicial e a posição final (final não incluído).
+***Exemplo***
+Corte uma parte de uma corda da posição 7 para a posição 13 (13 não incluída):
+
+let str = "Apple, Banana, Kiwi";
+let part = str.slice(7, 13);
+
+**Substituindo o conteúdo da string**
+O replace()método substitui um valor especificado por outro valor em uma string:
+
+***Exemplo***
+let text = "Please visit Microsoft!";
+let newText = text.replace("Microsoft", "W3Schools");
+
+***Observação***
+O replace()método não altera a string em que é chamado.
+
+O replace()método retorna uma nova string.
+
+O replace()método substitui apenas a primeira correspondência
+
+Se você quiser substituir todas as correspondências, use uma expressão regular com o sinalizador /g definido. Veja exemplos abaixo.
+
+let text = "Please visit Microsoft and Microsoft!";
+let newText = text.replace(/Microsoft/g, "W3Schools");
+
+**Convertendo para Maiúsculas e Minúsculas**
+Uma string é convertida para maiúscula com toUpperCase():
+
+Uma string é convertida em letras minúsculas com toLowerCase()
