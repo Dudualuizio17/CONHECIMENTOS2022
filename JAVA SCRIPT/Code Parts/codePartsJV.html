@@ -210,9 +210,10 @@ No exemplo a seguir, um onclickatributo (com código) é adicionado a um <button
   <p id="demo"></p>
 
   <script>
-    let text = "We are the so-called \"Vikings\" from the north.";
-    document.getElementById("demo").innerHTML = text; 
+    let text1 = "We are the so-called \"Vikings\" from the north.";
+    document.getElementById("demo").innerHTML = text1; 
   </script>
+
   resultado: We are the so-called "Vikings" from the north.
 
   //JavaScript String slice()
@@ -307,6 +308,32 @@ function myFunction() {
 }
 </script>
 
+//JavaScript String concat()
+concat()junta duas ou mais strings:
 
+let text1 = "Hello";
+let text2 = "World";
+let text3 = text1.concat(" ", text2);
 
+<p id="demo"></p>
+
+<script>
+let text1 = "Hello";
+let text2 = "World!";
+let text3 = text1.concat(" ",text2);
+document.getElementById("demo").innerHTML = text3;
+</script>
+
+//JavaScript String charAt()
+O charAt()método retorna o caractere em um índice especificado (posição) em uma string:
+Exemplo
+let text = "HELLO WORLD";
+let char = text.charAt(0);
+
+<p id="demo"></p>
+
+<script>
+var text = "HELLO WORLD";
+document.getElementById("demo").innerHTML = text.charAt(0);
+</script>
 

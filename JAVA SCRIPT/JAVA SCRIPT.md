@@ -240,3 +240,36 @@ let newText = text.replace(/Microsoft/g, "W3Schools");
 Uma string é convertida para maiúscula com toUpperCase():
 
 Uma string é convertida em letras minúsculas com toLowerCase()
+
+**JavaScript String concat()**
+concat() joins two or more strings:
+Example
+let text1 = "Hello";
+let text2 = "World";
+let text3 = text1.concat(" ", text2);
+
+**JavaScript String trim()**
+O trim() método remove os espaços em branco de ambos os lados de uma string:
+
+Exemplo
+let text1 = "      Hello World!      ";
+let text2 = text1.trim();
+
+**Extraindo caracteres de string**
+
+Existem 3 métodos para extrair caracteres de string:
+
+charAt(position)
+charCodeAt(position)
+Acesso à propriedade [ ]
+
+**Convertendo uma String em um Array**
+Se você quiser trabalhar com uma string como uma matriz, poderá convertê-la em uma matriz.
+
+***JavaScript String split()***
+Uma string pode ser convertida em um array com o split()método:
+
+Exemplo
+text.split(",")    // Split on commas
+text.split(" ")    // Split on spaces
+text.split("|")    // Split on pipe
