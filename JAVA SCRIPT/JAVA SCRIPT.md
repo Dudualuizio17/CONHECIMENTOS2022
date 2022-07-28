@@ -273,3 +273,181 @@ Exemplo
 text.split(",")    // Split on commas
 text.split(" ")    // Split on spaces
 text.split("|")    // Split on pipe
+
+**Pesquisa de String JavaScript**
+Métodos de pesquisa JavaScript
+String indexOf() ***POSIÇÃO INICIAL DA PRIMEIRA VEZ QUE O TEXTO APARECE***
+String lastIndexOf() ***POSIÇÃO INICIAL DA ULTIMA VEZ QUE O TEXTO APARECE***
+String startsWith() ***COMEÇA COM UM VALOR ESPECIFICADO***
+String endsWith() ***TERMINA COM UM VALOR ESPEIFICADO***
+
+**JavaScript String match()**
+O método match() pesquisa uma string em busca de uma correspondência com uma expressão regular e retorna as correspondências como um objeto Array.
+
+**String JavaScript includes()**
+O includes()método retorna true se uma string contiver um valor especificado.
+
+**JavaScript String startsWith()**
+O startsWith()método retorna true se uma string começa com um valor especificado, caso contrário false.
+
+**JavaScript String endsWith()**
+The endsWith() método retorna true se uma string termina com um valor especificado, caso contrário false.
+
+**JavaScript Template Literals**
+Synonyms:
+Template Literals
+Template Strings
+String Templates
+Back-Tics Syntax
+
+***Citações Dentro de Strings***
+Com literais de modelo , você pode usar aspas simples e duplas dentro de uma string:
+
+Exemplo
+let text = `He's often called "Johnny"`; result= He's often called "Johnny"
+
+**Convertendo Variáveis ​​em Números**
+Existem 3 métodos JavaScript que podem ser usados ​​para converter variáveis ​​em números:
+
+O Number() 
+O parseInt() 
+O parseFloat() 
+Esses métodos não são métodos numéricos , mas métodos JavaScript globais .
+
+**Métodos JavaScript globais**
+Os métodos globais JavaScript podem ser usados ​​em todos os tipos de dados JavaScript.
+
+Estes são os métodos mais relevantes, ao trabalhar com números:
+
+Method	             Description
+Number()	         Returns a number, converted from its argument.
+parseFloat()	     Parses its argument and returns a floating point number
+parseInt()	         Parses its argument and returns an integer
+
+***O método toString()***
+O toString()método retorna um número como uma string.
+
+***O método toExponential()***
+toExponential()retorna uma string, com um número arredondado e escrito usando notação exponencial.
+
+***O método toFixed()***
+toFixed()retorna uma string, com o número escrito com um número especificado de decimais
+toFixed(2)é perfeito para trabalhar com dinheiro.
+
+***O método toPrecision()***
+toPrecision()retorna uma string, com um número escrito com um comprimento especificado
+
+**Propriedades do número**
+***Property***             	***Description***
+MAX_VALUE	                   Returns the largest number possible in JavaScript
+MIN_VALUE	                   Returns the smallest number possible in JavaScript
+POSITIVE_INFINITY	           Represents infinity (returned on overflow)
+NEGATIVE_INFINITY	           Represents negative infinity (returned on overflow)
+NaN	                           Represents a "Not-a-Number" value
+
+**JavaScript Arrays**
+Um array é uma variável especial, que pode conter mais de um valor.
+EXEMPLO:
+const cars = ["Saab", "Volvo", "BMW"];
+
+Você também pode criar uma Array e fornecer os elementos:
+
+Exemplo
+const cars = [];
+cars[0]= "Saab";
+cars[1]= "Volvo";
+cars[2]= "BMW";
+
+***Acessando elementos da array***
+Você acessa um elemento de array referindo-se ao número do índice :
+
+const cars = ["Saab", "Volvo", "BMW"];
+let car = cars[0];
+
+***Alterando um elemento de array***
+Esta instrução altera o valor do primeiro elemento em cars:
+
+cars[0] = "Opel";
+
+***Acesse a Array completa***
+Com JavaScript, o array completo pode ser acessado consultando o nome do array:
+
+Exemplo
+const cars = ["Saab", "Volvo", "BMW"];
+document.getElementById("demo").innerHTML = cars
+
+***A propriedade de comprimento***
+A lengthpropriedade de um array retorna o comprimento de um array (o número de elementos do array).
+
+Exemplo
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let length = fruits.length;
+
+***Looping Array Elements***
+
+Uma maneira de percorrer um array é usar um for loop:
+
+Exemplo
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fLen = fruits.length;
+
+let text = "<ul>";
+for (let i = 0; i < fLen; i++) {
+  text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
+
+**Adicionando elementos Array**
+A maneira mais fácil de adicionar um novo elemento a um array é usando o push()método:
+
+Exemplo
+const fruits = ["Banana", "Orange", "Apple"];
+fruits.push("Lemon");  ***Adds a new element (Lemon) to fruits***
+
+**Arrays Associativas**
+Muitas linguagens de programação suportam arrays com índices nomeados.
+
+Arrays com índices nomeados são chamados de arrays associativos (ou hashes).
+
+JavaScript não suporta arrays com índices nomeados.
+
+Em JavaScript, arrays sempre usam índices numerados .  
+
+***A diferença entre arrays e objetos***
+Em JavaScript, arrays usam índices numerados .  
+Em JavaScript, os objetos usam índices nomeados .
+
+***Quando usar arrays. Quando usar objetos.***
+JavaScript não suporta arrays associativos.
+Você deve usar objetos quando quiser que os nomes dos elementos sejam strings (texto) .
+Você deve usar arrays quando quiser que os nomes dos elementos sejam números .
+
+***JavaScript nova array()***
+JavaScript tem um construtor de array embutido new Array().
+
+Mas você pode usar com segurança []em vez disso.
+
+Essas duas instruções diferentes criam um novo array vazio chamado points:
+
+const points = new Array();
+const points = [];
+
+**Como reconhecer uma matriz**
+Uma pergunta comum é: Como saber se uma variável é um array?
+
+O problema é que o operador JavaScript typeofretorna " object":
+
+const fruits = ["Banana", "Orange", "Apple"];
+let type = typeof fruits;
+
+O operador typeof retorna objeto porque uma matriz JavaScript é um objeto.
+
+Solução 1:
+Para resolver este problema, o ECMAScript 5 (JavaScript 2009) definiu um novo método **Array.isArray():**
+
+Solução 2:
+O **instanceof** operador retorna true se um objeto for criado por um determinado construtor:
+
+const fruits = ["Banana", "Orange", "Apple"];
+
+fruits instanceof Array;

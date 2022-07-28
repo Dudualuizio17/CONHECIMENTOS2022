@@ -210,8 +210,8 @@ No exemplo a seguir, um onclickatributo (com código) é adicionado a um <button
   <p id="demo"></p>
 
   <script>
-    let text1 = "We are the so-called \"Vikings\" from the north.";
-    document.getElementById("demo").innerHTML = text1; 
+    let text = "We are the so-called \"Vikings\" from the north.";
+    document.getElementById("demo").innerHTML = text; 
   </script>
 
   resultado: We are the so-called "Vikings" from the north.
@@ -239,101 +239,295 @@ No exemplo a seguir, um onclickatributo (com código) é adicionado a um <button
 
   <button onclick="myFunction()">Try it</button>
 
-<p id="demo">Please visit Microsoft!</p>
+  <p id="demo">Please visit Microsoft!</p>
+
+  <script>
+    function myFunction() {
+      let text = document.getElementById("demo").innerHTML;
+      document.getElementById("demo").innerHTML =
+        text.replace("Microsoft", "W3Schools");
+    }
+  </script>
+
+  Para substituir todas as correspondências, use uma expressão regular com um /g sinalizador
+  (correspondência global):
+
+  Exemplo
+  let text = "Please visit Microsoft and Microsoft!";
+  let newText = text.replace(/Microsoft/g, "W3Schools");
+
+  <p>Replace all occurrences of "Microsoft" with "W3Schools" in the paragraph below:</p>
+
+  <button onclick="myFunction()">Try it</button>
+
+  <p id="demo">Please visit Microsoft and Microsoft!</p>
+
+  <script>
+    function myFunction() {
+      let text = document.getElementById("demo").innerHTML;
+      document.getElementById("demo").innerHTML =
+        text.replace(/Microsoft/g, "W3Schools");
+    }
+  </script>
+
+  //Convertendo para Maiúsculas e Minúsculas
+
+  String JavaScript para UpperCase()
+  Exemplo
+
+  let text1 = "Hello World!";
+  let text2 = text1.toUpperCase();
+
+  <button onclick="myFunction()">Try it</button>
+
+  <p id="demo">Hello World!</p>
+
+  <script>
+    function myFunction() {
+      let text = document.getElementById("demo").innerHTML;
+      document.getElementById("demo").innerHTML =
+        text.toUpperCase();
+    }
+  </script>
+
+  String JavaScript para LowerCase()
+  Exemplo
+
+  let text1 = "Hello World!"; // String
+  let text2 = text1.toLowerCase(); // text2 is text1 converted to lower
+
+  <button onclick="myFunction()">Try it</button>
+
+  <p id="demo">Hello World!</p>
+
+  <script>
+    function myFunction() {
+      let text = document.getElementById("demo").innerHTML;
+      document.getElementById("demo").innerHTML =
+        text.toLowerCase();
+    }
+  </script>
+
+  //JavaScript String concat()
+  concat()junta duas ou mais strings:
+
+  let text1 = "Hello";
+  let text2 = "World";
+  let text3 = text1.concat(" ", text2);
+
+  <p id="demo"></p>
+
+  <script>
+    let text1 = "Hello";
+    let text2 = "World!";
+    let text3 = text1.concat(" ", text2);
+    document.getElementById("demo").innerHTML = text3;
+  </script>
+
+  //JavaScript String charAt()
+  O charAt()método retorna o caractere em um índice especificado (posição) em uma string:
+  Exemplo
+  let text = "HELLO WORLD";
+  let char = text.charAt(0);
+
+  <p id="demo"></p>
+
+  <script>
+    var text = "HELLO WORLD";
+    document.getElementById("demo").innerHTML = text.charAt(0);
+  </script>
+
+  //Pesquisa de String JavaScript
+
+  Example
+  let str = "Please locate where 'locate' occurs!";
+  str.indexOf("locate");
+
+  <p id="demo"></p>
+
+  <script>
+    let str = "Please locate where 'locate' occurs!";
+    document.getElementById("demo").innerHTML = str.indexOf("locate");
+  </script>
+
+  //JavaScript String match()
+  O método match() pesquisa uma string em busca de uma correspondência com uma expressão regular,
+  e retorna as correspondências como um objeto Array.
+
+  Exemplo 1
+  Pesquise uma string por "ain":
+
+  let text = "The rain in SPAIN stays mainly in the plain";
+  text.match(/ain/g);
+
+  <p id="demo"></p>
+
+  <script>
+    let text = "The rain in SPAIN stays mainly in the plain";
+    document.getElementById("demo").innerHTML = text.match(/ain/g);
+  </script>
+
+  //JavaScript String includes()
+  O includes()método retorna true se uma string contiver um valor especificado.
+
+  let text = "Hello world, welcome to the universe.";
+  text.includes("world");
+
+  <p id="demo"></p>
+
+  <p>The includes() method is not supported in Internet Explorer.</p>
+
+  <script>
+    let text = "Hello world, welcome to the universe.";
+    document.getElementById("demo").innerHTML = text.includes("world");
+  </script>
+
+  //JavaScript String startsWith()
+
+  O startsWith()método retorna true se uma string começa com um valor especificado, caso contrário false.
+  Example
+  let text = "Hello world, welcome to the universe.";
+
+  text.startsWith("Hello");
+  <p id="demo"></p>
+
+  <p>The startsWith() method is not supported in Internet Explorer.</p>
+
+  <script>
+    let text = "Hello world, welcome to the universe.";
+    document.getElementById("demo").innerHTML = text.startsWith("Hello");
+  </script>
+
+//JavaScript String endsWith()
+The endsWith() method returns true if a string ends with a specified value, otherwise false
+
+Example
+Check if a string ends with "Doe":
+
+let text = "John Doe";
+text.endsWith("Doe");
+<p id="demo"></p>
+
+<p>The endsWith() method is not supported in Internet Explorer.</p>
 
 <script>
-function myFunction() {
-  let text = document.getElementById("demo").innerHTML;
-  document.getElementById("demo").innerHTML =
-  text.replace("Microsoft","W3Schools");
-}
+let text = "John Doe";
+document.getElementById("demo").innerHTML = text.endsWith("Doe");
 </script>
 
-Para substituir todas as correspondências, use uma expressão regular com um /g sinalizador 
-(correspondência global):
+//Variable Substitutions
+Os literais de modelo permitem variáveis ​​em strings:
 
 Exemplo
-let text = "Please visit Microsoft and Microsoft!";
-let newText = text.replace(/Microsoft/g, "W3Schools");
+let firstName = "John";
+let lastName = "Doe";
 
-<p>Replace all occurrences of "Microsoft" with "W3Schools" in the paragraph below:</p>
-
-<button onclick="myFunction()">Try it</button>
-
-<p id="demo">Please visit Microsoft and Microsoft!</p>
+let text = `Welcome ${firstName}, ${lastName}!`;
+<p id="demo"></p>
 
 <script>
-function myFunction() {
-  let text = document.getElementById("demo").innerHTML; 
-  document.getElementById("demo").innerHTML =
-  text.replace(/Microsoft/g,"W3Schools");
-}
+let firstName = "John";
+let lastName = "Doe";
+
+let text = `Welcome ${firstName}, ${lastName}!`;
+
+document.getElementById("demo").innerHTML = text;
 </script>
 
-//Convertendo para Maiúsculas e Minúsculas
+//JavaScript Arrays
+Creating an Array
+Example
+const cars = ["Saab", "Volvo", "BMW"];
+<p id="demo"></p>
 
-String JavaScript para UpperCase()
+<script>
+const cars = ["Saab", "Volvo", "BMW"];
+document.getElementById("demo").innerHTML = cars;
+</script>
+
+//Acessando elementos da array
+Você acessa um elemento de array referindo-se ao número do índice :
+
+const cars = ["Saab", "Volvo", "BMW"];
+let car = cars[0];
+<p id="demo"></p>
+
+<script>
+const cars = ["Saab", "Volvo", "BMW"];
+document.getElementById("demo").innerHTML = cars[0];
+</script>
+
+//Elementos de array em Loop
+Uma maneira de percorrer um array é usar um for loop:
+
 Exemplo
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fLen = fruits.length;
 
-let text1 = "Hello World!";
-let text2 = text1.toUpperCase();
-
-<button onclick="myFunction()">Try it</button>
-
-<p id="demo">Hello World!</p>
+let text = "<ul>";
+for (let i = 0; i < fLen; i++) {
+  text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
 
 <script>
-function myFunction() {
-  let text = document.getElementById("demo").innerHTML;
-  document.getElementById("demo").innerHTML =
-  text.toUpperCase();
-}
-</script>
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+  let fLen = fruits.length;
+  
+  let text = "<ul>";
+  for (let i = 0; i < fLen; i++) {
+    text += "<li>" + fruits[i] + "</li>";
+  }
+  text += "</ul>";
+  
+  document.getElementById("demo").innerHTML = text;
+  </script>
 
-String JavaScript para LowerCase()
+//Você também pode usar a Array.forEach()função:
+
 Exemplo
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
 
-let text1 = "Hello World!";       // String
-let text2 = text1.toLowerCase();  // text2 is text1 converted to lower
+let text = "<ul>";
+fruits.forEach(myFunction);
+text += "</ul>";
 
-<button onclick="myFunction()">Try it</button>
-
-<p id="demo">Hello World!</p>
+function myFunction(value) {
+  text += "<li>" + value + "</li>";
+}
+<p id="demo"></p>
 
 <script>
-function myFunction() {
-  let text = document.getElementById("demo").innerHTML;
-  document.getElementById("demo").innerHTML =
-  text.toLowerCase();
-}
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+let text = "<ul>";
+fruits.forEach(myFunction);
+text += "</ul>";
+document.getElementById("demo").innerHTML = text;
+
+function myFunction(value) {
+  text += "<li>" + value + "</li>";
+} 
 </script>
 
-//JavaScript String concat()
-concat()junta duas ou mais strings:
+//Adicionando elementos Array
+A maneira mais fácil de adicionar um novo elemento a um array é usando o push()método:
 
-let text1 = "Hello";
-let text2 = "World";
-let text3 = text1.concat(" ", text2);
+Exemplo
+const fruits = ["Banana", "Orange", "Apple"];
+fruits.push("Lemon");  Adds a new element (Lemon) to fruits
+
+<button onclick="myFunction()">Try it</button>
 
 <p id="demo"></p>
 
 <script>
-let text1 = "Hello";
-let text2 = "World!";
-let text3 = text1.concat(" ",text2);
-document.getElementById("demo").innerHTML = text3;
-</script>
+const fruits = ["Banana", "Orange", "Apple"];
+document.getElementById("demo").innerHTML = fruits;
 
-//JavaScript String charAt()
-O charAt()método retorna o caractere em um índice especificado (posição) em uma string:
-Exemplo
-let text = "HELLO WORLD";
-let char = text.charAt(0);
-
-<p id="demo"></p>
-
-<script>
-var text = "HELLO WORLD";
-document.getElementById("demo").innerHTML = text.charAt(0);
+function myFunction() {
+  fruits.push("Lemon");
+  document.getElementById("demo").innerHTML = fruits;
+}
 </script>
 
