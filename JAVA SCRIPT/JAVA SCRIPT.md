@@ -451,3 +451,67 @@ O **instanceof** operador retorna true se um objeto for criado por um determinad
 const fruits = ["Banana", "Orange", "Apple"];
 
 fruits instanceof Array;
+
+**ARRAYS RESUMO**
+
+***sort()***       Organiza em ordem alfabética (Transforma tudo em String)
+***reverse()***    Organiza em ordem decrescente (Transforma tudo em String)
+***toString()***   Converte um array em uma string de valores de array
+***join()***       Também une todos os elementos do array em uma string.
+***pop()***        Remove o último elemento de um array
+***push()***       Adiciona um novo elemento a um array (no final)
+***shift()***      Remove o primeiro elemento da matriz e "desloca" todos os outros elementos para um índice inferior.
+***unshift()***    Adiciona um novo elemento a um array (no início) e "desloca" os elementos mais antigos
+***concat()***     Cria um novo array mesclando (concatenando) arrays existentes
+***delete***       Excluindo a array
+***splice()***     Método adiciona novos itens a uma array.
+***slice()***      Método fatia um pedaço de uma array.
+
+
+***Classificação numérica***
+Por padrão, a sort()função classifica os valores como strings .
+
+Isso funciona bem para strings ("Apple" vem antes de "Banana").
+
+No entanto, se os números forem classificados como strings, "25" é maior que "100", porque "2" é maior que "1".
+
+Por causa disso, o sort()método produzirá um resultado incorreto ao classificar os números.
+
+Você pode corrigir isso fornecendo uma função de comparação :
+
+Exemplo
+***const points = [40, 100, 1, 5, 25, 10];***
+***points.sort(function(a, b){return a - b});***
+
+**A função de comparação**
+A finalidade da função de comparação é definir uma ordem de classificação alternativa.
+
+A função de comparação deve retornar um valor negativo, zero ou positivo, dependendo dos argumentos:
+
+***function(a, b){return a - b}***
+
+Quando a sort()função compara dois valores, ela envia os valores para a função de comparação e classifica os valores de acordo com o valor retornado (negativo, zero, positivo).
+
+Se o resultado for negativo **a** é classificado antes de **b** .
+
+Se o resultado for positivo **b** é classificado antes de **a** .
+
+Se o resultado for 0, nenhuma alteração será feita com a ordem de classificação dos dois valores.
+
+Exemplo:
+
+A função compare compara todos os valores na matriz, dois valores por vez (a, b).
+
+Ao comparar 40 e 100, o sort()método chama a função de comparação(40, 100).
+
+A função calcula 40 - 100 (a - b)e, como o resultado é negativo (-60), a função de classificação classificará 40 como um valor menor que 100.
+
+Você pode usar este snippet de código para experimentar a classificação numérica e alfabética:
+
+**JavaScript Array delete()**
+Aviso !
+Os elementos da matriz podem ser excluídos usando o operador JavaScript delete.
+
+Usando delete deixa undefined buracos na matriz.
+
+Use pop() ou shift() em vez disso.
