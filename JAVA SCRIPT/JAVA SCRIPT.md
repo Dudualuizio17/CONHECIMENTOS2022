@@ -515,3 +515,248 @@ Os elementos da matriz podem ser excluídos usando o operador JavaScript delete.
 Usando delete deixa undefined buracos na matriz.
 
 Use pop() ou shift() em vez disso.
+
+**Automatic toString()**
+JavaScript converte automaticamente um array em uma string separada por vírgulas quando um valor primitivo é esperado.
+Este é sempre o caso quando você tenta gerar uma matriz.
+
+Esses dois exemplos produzirão o mesmo resultado:
+Exemplo
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.toString();
+
+Exemplo 2
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+
+**Encontrando Max and Min em um Array**
+Não há funções internas para localizar o valor mais alto ou mais baixo em uma matriz JavaScript.
+Você aprenderá como resolver esse problema no próximo capítulo deste tutorial.
+
+
+**JavaScript Date Objects**
+Por padrão, o JavaScript usará o fuso horário do navegador e exibirá uma data como uma string de texto completo:
+Exemplo
+const d = new Date();
+
+Seg 01 de agosto de 2022 10:43:22 GMT-0300 (Horário Padrão de Brasília)
+
+***Criando Date objects***
+Objetos de data são criados com o new Date()construtor.
+
+Existem 4 maneiras de criar um novo objeto de data:
+
+***new Date()***
+***new Date(year, month, day, hours, minutes, seconds, milliseconds)***
+***new Date(milliseconds)***
+***new Date(date string)***
+
+**Nota:**
+JavaScript conta meses de 0 a 11 :
+Janeiro = 0 .
+Dezembro = 11 .
+
+O JavaScript irá (por padrão) exibir datas no formato de string de texto completo:
+Mon Aug 01 2022 11:00:53 GMT-0300 (Horário Padrão de Brasília)
+
+Quando você exibe um objeto de data em HTML, ele é convertido automaticamente em uma string, com o toString()método.
+
+Exemplo
+const d = new Date();
+d.toString();
+
+O **toDateString()** converte uma data em um formato mais legível:
+
+Exemplo
+const d = new Date();
+d.toDateString();
+***Mon Aug 01 2022***
+
+O **toISOString()** converte um objeto Date em uma string, usando o formato padrão ISO:
+
+Exemplo
+const d = new Date();
+d.toISOString();
+
+**JavaScript Date Formats**
+Geralmente, existem 3 tipos de formatos de entrada de data JavaScript:
+
+***Modelo***	                   ***Exemplo***
+ISO DATE	                          "2015-03-25" (O Padrão Internacional)
+SHORT DATE	                        "03/25/2015"
+LONG DATE	                          "Mar 25 2015" ou "25 Mar 2015"
+
+***ISO DATE JavaScript***
+A ISO 8601 é a norma internacional para a representação de datas e horas.
+
+A sintaxe ISO 8601 (AAAA-MM-DD) também é o formato de data JavaScript preferido:
+
+Exemplo (data completa)
+const d = new Date("2015-03-25");
+
+***UTC (Universal Time Coordinated) é o mesmo que GMT (Greenwich Mean Time).***
+
+**Fusos horários**
+Ao definir uma data, sem especificar o fuso horário, o JavaScript usará o fuso horário do navegador.
+
+Ao obter uma data, sem especificar o fuso horário, o resultado é convertido para o fuso horário do navegador.
+
+Em outras palavras: Se uma data/hora for criada em GMT (Greenwich Mean Time), a data/hora será convertida para CDT (Central US Daylight Time) se um usuário navegar a partir da região central dos EUA.
+
+
+**Date Input - Parsing Dates**
+Se você tiver uma string de data válida, poderá usar o Date.parse()método para convertê-la em milissegundos.
+
+Date.parse()retorna o número de milissegundos entre a data e 1º de janeiro de 1970:
+
+Exemplo
+let msec = Date.parse("March 21, 2012");
+
+**JavaScript Get Date Methods**
+Esses métodos podem ser usados ​​para obter informações de um objeto de data:
+
+***Method***	               ***Description***
+getFullYear()	                  Get the year as a four digit number (yyyy)
+getMonth()	                    Get the month as a number (0-11)
+getDate()	                      Get the day as a number (1-31)
+getHours()	                    Get the hour (0-23)
+getMinutes()	                  Get the minute (0-59)
+getSeconds()	                  Get the second (0-59)
+getMilliseconds()	              Get the millisecond (0-999)
+getTime()	                      Get the time (milliseconds since January 1, 1970)
+getDay()	                      Get the weekday as a number (0-6)
+Date.now()	                    Get the time. ECMAScript 5.
+
+**Métodos de data UTC**
+Os métodos de data UTC são usados ​​para trabalhar com datas UTC (datas do fuso horário universal):
+
+***Method***	                ***Description***
+getUTCDate()	                   Same as getDate(), but returns the UTC date
+getUTCDay()	                     Same as getDay(), but returns the UTC day
+getUTCFullYear()	               Same as getFullYear(), but returns the UTC year
+getUTCHours()	                   Same as getHours(), but returns the UTC hour
+getUTCMilliseconds()	           Same as getMilliseconds(), but returns the UTC milliseconds
+getUTCMinutes()	                 Same as getMinutes(), but returns the UTC minutes
+getUTCMonth()	                   Same as getMonth(), but returns the UTC month
+getUTCSeconds()	                 Same as getSeconds(), but returns the UTC seconds
+
+**JavaScript Set Date Methods**
+Os métodos Set Date são usados ​​para definir uma parte de uma data:
+
+***Method***	                 ***Description***
+setDate()	                        Set the day as a number (1-31)
+setFullYear()	                    Set the year (optionally month and day)
+setHours()	                      Set the hour (0-23)
+setMilliseconds()	                Set the milliseconds (0-999)
+setMinutes()	                    Set the minutes (0-59)
+setMonth()	                      Set the month (0-11)
+setSeconds()	                    Set the seconds (0-59)
+setTime()	                        Set the time (milliseconds since January 1, 1970)
+
+**JavaScript Math Object**
+O objeto JavaScript Math permite que você execute tarefas matemáticas em números.
+
+O objeto matemático
+Ao contrário de outros objetos, o objeto Math não possui construtor.
+O objeto Math é estático.
+Todos os métodos e propriedades podem ser usados ​​sem primeiro criar um objeto Math.
+
+Propriedades matemáticas (constantes)
+A sintaxe para qualquer propriedade Math é: .Math.property
+
+***JavaScript fornece 8 constantes matemáticas que podem ser acessadas como propriedades matemáticas:***
+
+Exemplo
+Math.E        // returns Euler's number
+Math.PI       // returns PI
+Math.SQRT2    // returns the square root of 2
+Math.SQRT1_2  // returns the square root of 1/2
+Math.LN2      // returns the natural logarithm of 2
+Math.LN10     // returns the natural logarithm of 10
+Math.LOG2E    // returns base 2 logarithm of E
+Math.LOG10E   // returns base 10 logarithm of E
+
+***Métodos matemáticos***
+A sintaxe para qualquer método Math é:Math.method(number)
+
+***Número para inteiro***
+Existem 4 métodos comuns para arredondar um número para um inteiro:
+
+Math.round(x)	Retorna x arredondado para o inteiro mais próximo
+Math.ceil(x)	Retorna x arredondado para o inteiro mais próximo
+Math.floor(x)	Retorna x arredondado para o inteiro mais próximo
+Math.trunc(x)	Retorna a parte inteira de x ( novo no ES6 )
+
+***Math.sign()***
+Math.sign(x)retorna se x for negativo, nulo ou positivo:
+
+***Math.pow()***
+Math.pow(x, y)retorna o valor de x elevado a y:
+
+Exemplo
+Math.pow(8, 2);
+
+***Math.sqrt()***
+Math.sqrt(x)retorna a raiz quadrada de x:
+
+Exemplo
+Math.sqrt(64);
+
+***Math.abs()***
+Math.abs(x)retorna o valor absoluto (positivo) de x:
+
+Exemplo
+Math.abs(-4.7);
+
+***Math.sin()***
+Math.sin(x)retorna o seno (um valor entre -1 e 1) do ângulo x (dado em radianos).
+
+Se você quiser usar graus em vez de radianos, você deve converter graus em radianos:
+
+Ângulo em radianos = Ângulo em graus x PI / 180.
+
+***Math.cos()***
+Math.cos(x)retorna o cosseno (um valor entre -1 e 1) do ângulo x (dado em radianos).
+
+Se você quiser usar graus em vez de radianos, você deve converter graus em radianos:
+
+Ângulo em radianos = Ângulo em graus x PI / 180.
+
+***Math.min() e Math.max()***
+Math.min()e Math.max()pode ser usado para encontrar o valor mais baixo ou mais alto em uma lista de argumentos:
+
+Exemplo
+Math.min(0, 150, 30, 20, -8, -200);
+Exemplo
+Math.max(0, 150, 30, 20, -8, -200);
+
+***Math.random()***
+Math.random()retorna um número aleatório entre 0 (inclusive) e 1 (exclusivo):
+
+**JavaScript Booleans**
+Um JavaScript Boolean representa um de dois valores: true ou false .
+
+Valores Booleanos
+Muitas vezes, em programação, você precisará de um tipo de dados que só pode ter um de dois valores, como
+
+YES / NO
+ON / OFF
+TRUE / FALSE
+Para isso, o JavaScript possui um tipo de dados booleano . Ele só pode assumir os valores true ou false .
+
+***The Boolean() Function***
+Você pode usar a função Boolean() para descobrir se uma expressão (ou uma variável) é verdadeira:
+
+Exemplo
+Boolean(10 > 9)
+
+***Comparisons and Conditions***
+O capítulo Comparações de JS oferece uma visão geral completa dos operadores de comparação.
+O capítulo Condições JS fornece uma visão geral completa das declarações condicionais.
+
+aqui estão alguns exemplos:
+
+**Operator**	          **Description**	             **Example**
+==	                      equal to	                   if (day == "Monday")
+>	                        greater than	               if (salary > 9000)
+<	                        less than	                   if (age < 18)

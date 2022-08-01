@@ -1,0 +1,2 @@
+var sValorPi = Math.Pi;
+

@@ -690,5 +690,42 @@ const citrus = fruits.slice(1);
 document.getElementById("demo").innerHTML = fruits + "<br><br>" + citrus;
 </script>
 
+//Automatic toString()
+
+JavaScript converte automaticamente um array,
+em uma string separada por vírgulas quando um valor primitivo é esperado.
+<p id="demo"></p>
+
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.toString();
+</script>
 
 
+//JavaScript Date Objects
+
+JavaScript Date Object nos permite trabalhar com datas:
+Seg 01 de agosto de 2022 11:00:53 GMT-0300 (Horário Padrão de Brasília)
+
+Exemplo
+const d = new Date();
+<p id="demo"></p>
+
+<script>
+const d = new Date();
+document.getElementById("demo").innerHTML = d;
+</script>
+
+
+//JavaScript Math Object
+O objeto JavaScript Math permite que você execute tarefas matemáticas em números.
+Exemplo
+Math.PI;
+
+<p>Math.PI returns the ratio of a circle's circumference to its diameter:</p>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = Math.PI;
+</script>
