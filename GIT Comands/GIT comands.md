@@ -25,3 +25,8 @@
 ***git revert*** : Desfaz a alteração já "commitada"  .
 
 ***git diff*** : Permite visualizar as mudanças realizadas em determinado código. Podemos ver as diferenças entre commits, branches e etc.
+
+**EXECUTAR A FUNÇÃO NO CONSOLE.LOG**
+
+node + nome do arquivo
+
