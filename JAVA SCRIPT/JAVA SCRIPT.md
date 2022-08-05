@@ -760,3 +760,82 @@ aqui estão alguns exemplos:
 ==	                      equal to	                   if (day == "Monday")
 >	                        greater than	               if (salary > 9000)
 <	                        less than	                   if (age < 18)
+
+**Operadores lógicos**
+Os operadores lógicos são usados ​​para determinar a lógica entre variáveis ​​ou valores.
+Dado que x = 6e y = 3, a tabela abaixo explica os operadores lógicos:
+
+**Operator**	         **Description**	            **Example**
+&&	                     and	                        (x < 10 && y > 1) is true	
+||	                     or	                          (x == 5 || y == 5) is false	
+!	                       not	                        !(x == y) is true
+
+**Operador condicional (ternário)**
+JavaScript também contém um operador condicional que atribui um valor a uma variável com base em alguma condição.
+
+Sintaxe
+variablename = (condition) ? value1:value2 
+***Exemplo***
+let voteable = (age < 18) ? "Too young":"Old enough";
+
+
+**JavaScript if, else, and else if**
+As instruções condicionais são usadas para executar diferentes ações com base em diferentes condições.
+
+***Declarações Condicionais***
+Muitas vezes, quando você escreve código, deseja executar ações diferentes para decisões diferentes.
+
+Você pode usar instruções condicionais em seu código para fazer isso.
+
+Em JavaScript temos as seguintes declarações condicionais:
+
+Use **if** para especificar um bloco de código a ser executado, se uma condição especificada for verdadeira
+Use **else** para especificar um bloco de código a ser executado, se a mesma condição for falsa
+Use **else if** para especificar uma nova condição a ser testada, se a primeira condição for falsa
+Use **switch** para especificar muitos blocos alternativos de código a serem executados
+
+**A declaração else**
+Use a elseinstrução para especificar um bloco de código a ser executado se a condição for falsa.
+
+if (condition) {
+    ***block of code to be executed if the condition is true***
+} else {
+   ***block of code to be executed if the condition is false***
+}
+
+***Exemplo***
+Se a hora for menor que 18, crie uma saudação "Bom dia", caso contrário, "Boa noite":
+
+if (hour < 18) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}
+
+***A declaração else if***
+Use a else ifinstrução para especificar uma nova condição se a primeira condição for falsa.
+
+Sintaxe
+if (condition1) {
+  //  block of code to be executed if condition1 is true
+} else if (condition2) {
+  //  block of code to be executed if the condition1 is false and condition2 is true
+} else {
+  //  block of code to be executed if the condition1 is false and condition2 is false
+}
+
+**JavaScript Switch Statement**
+A switch é usada para executar diferentes ações com base em diferentes condições.
+Use a switch para selecionar um dos muitos blocos de código a serem executados.
+
+Sintaxe
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}

@@ -729,3 +729,96 @@ Math.PI;
 <script>
 document.getElementById("demo").innerHTML = Math.PI;
 </script>
+
+
+
+//Conditional (Ternary) Operator
+JavaScript also contains a conditional operator that assigns a value to a variable based on some condition.
+
+//Syntax
+variablename = (condition) ? value1:value2 
+Example
+let voteable = (age < 18) ? "Too young":"Old enough";
+<h2>JavaScript Comparison</h2>
+
+<p>Input your age and click the button:</p>
+
+<input id="age" value="18" />
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  let age = document.getElementById("age").value;
+  let voteable = (age < 18) ? "Too young":"Old enough";
+  document.getElementById("demo").innerHTML = voteable + " to vote.";
+}
+</script>
+
+//JavaScript if, else e else if
+if (hour < 18) {
+  greeting = "Good day";
+}
+<p>Display "Good day!" if the hour is less than 18:00:</p>
+
+<p id="demo">Good Evening!</p>
+
+<script>
+if (new Date().getHours() < 18) {
+  document.getElementById("demo").innerHTML = "Good day!";
+}
+</script>
+
+//A declaração else
+Exemplo
+Se a hora for menor que 18, crie uma saudação "Bom dia", caso contrário, "Boa noite":
+
+if (hour < 18) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}
+<p id="demo"></p>
+
+<script>
+const hour = new Date().getHours(); 
+let greeting;
+
+if (hour < 18) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}
+
+document.getElementById("demo").innerHTML = greeting;
+</script>
+
+//A declaração else if
+Exemplo
+Se a hora for menor que 10:00, crie uma saudação "Bom dia", caso contrário, 
+mas a hora for menor que 20:00, crie uma saudação "Bom dia", caso contrário, uma "Boa noite":
+
+if (time < 10) {
+  greeting = "Good morning";
+} else if (time < 20) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}
+<p id="demo"></p>
+
+<script>
+const time = new Date().getHours();
+let greeting;
+if (time < 10) {
+  greeting = "Good morning";
+} else if (time < 20) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}
+document.getElementById("demo").innerHTML = greeting;
+</script>
+
