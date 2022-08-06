@@ -1,5 +1,5 @@
 console.log(
-    toCelsius(77)
+    today()
 
 );
 
@@ -40,10 +40,12 @@ function sNotes(sNumber1, sNumber2, sNumber3) {
     return text;
 }
 
-function today(nDay) {
-    var day = ""
 
-    switch (new Date().getDay()) {
+//FUNÇÃO PARA DESCOBRIR QUAL A DATA DE HOJE USANDO SWUITCH
+function today(nDay) {
+    let day;
+
+    switch (new Date().getDate()) {
         case 0:
             day = "Sunday";
             break;
@@ -65,8 +67,8 @@ function today(nDay) {
         case 6:
             day = "Sutarday";
             break;
-
     }
 
-    return day;
+    return "Today is" + " " + day;
 }
+

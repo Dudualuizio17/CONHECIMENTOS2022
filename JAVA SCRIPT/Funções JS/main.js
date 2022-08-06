@@ -1,5 +1,5 @@
 console.log(
-    sumNumber(20, 8)
+calculator(3, 6)
 );
 
 //CRIE UMA FUNÇÃO CALCULO DAS 4 OPERACAOES PRINCIPAIS E ENTREGE TODOS OS RESULTADOS"
