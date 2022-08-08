@@ -1,5 +1,5 @@
 console.log(
-    today()
+    myFunc()
 
 );
 
@@ -72,3 +72,10 @@ function today(nDay) {
     return "Today is" + " " + day;
 }
 
+// FUNÇÃO COM CALLBACK EXECUTADO PARA CADA INTERVALO, myFunc É PASSADO P/ setInterval COMO ARGUMENTO.
+setInterval(myFunc, 1000);
+function myFunc() {
+    let d = new Date();
+
+    return d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+}

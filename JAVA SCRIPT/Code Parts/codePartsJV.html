@@ -822,3 +822,25 @@ if (time < 10) {
 document.getElementById("demo").innerHTML = greeting;
 </script>
 
+//Exemplo de validação de entrada
+Este exemplo examina a entrada. Se o valor estiver errado, uma exceção (err) é lançada.
+A exceção (err) é capturada pela instrução catch e uma mensagem de erro personalizada é exibida:
+<p id="p01"></p>
+
+<script>
+function myFunction() {
+  const message = document.getElementById("p01");
+  message.innerHTML = "";
+  let x = document.getElementById("demo").value;
+  try {
+    if(x == "") throw "empty";
+    if(isNaN(x)) throw "not a number";
+    x = Number(x);
+    if(x < 5) throw "too low";
+    if(x > 10) throw "too high";
+  }
+  catch(err) {
+    message.innerHTML = "Input is " + err;
+  }
+}
+</script>
