@@ -2403,3 +2403,435 @@ async function getFile() {
 }
 
 getFile();
+
+
+**Web APIs - Introduction**
+Uma API da Web é o sonho de um desenvolvedor.
+
+*Pode estender a funcionalidade do navegador
+*Pode simplificar muito funções complexas
+*Ele pode fornecer sintaxe fácil para código complexo
+
+**O que é API Web?**
+API significa Interface de Programação de Aplicativos .
+
+Uma API da Web é uma interface de programação de aplicativos para a Web.
+
+Uma API de navegador pode estender a funcionalidade de um navegador da web.
+
+Uma API de servidor pode estender a funcionalidade de um servidor web.
+
+**AJAX Introduction**
+AJAX é o sonho de um desenvolvedor, porque você pode:
+
+ *Ler dados de um servidor web - após o carregamento da página
+ *Atualizar uma página da Web sem recarregar a página
+ *Envie dados para um servidor web - em segundo plano
+
+ **RESUMO:** AJAX é o método para se obter o arquivo JSON!
+
+ ***Exemplo de AJAX explicado***
+
+Página HTML
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="demo">
+  <h2>Let AJAX change this text</h2>
+  <button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+
+</body>
+</html>
+
+A página HTML contém uma seção <div> e um <button>.
+
+A seção <div> é usada para exibir informações de um servidor.
+
+O <button> chama uma função (se for clicado).
+
+A função solicita dados de um servidor web e os exibe:
+
+Função loadDoc()
+
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("demo").innerHTML = this.responseText;
+    }
+  xhttp.open("GET", "ajax_info.txt", true);
+  xhttp.send();
+}
+
+**O que é AJAX?**
+AJAX = Um JavaScript síncrono e X ML .
+
+AJAX não é uma linguagem de programação.
+
+AJAX apenas usa uma combinação de:
+Um objeto interno do navegador XMLHttpRequest(para solicitar dados de um servidor web)
+JavaScript e HTML DOM (para exibir ou usar os dados)
+
+***AJAX é um nome enganoso. Os aplicativos AJAX podem usar XML para transportar dados, mas é igualmente comum transportar dados como texto simples ou texto JSON.***
+
+O AJAX permite que as páginas da Web sejam atualizadas de forma assíncrona, trocando dados com um servidor da Web nos bastidores. Isso significa que é possível atualizar partes de uma página web, sem recarregar a página inteira.
+
+1. Um evento ocorre em uma página da web (a página é carregada, um botão é clicado)
+2. Um objeto XMLHttpRequest é criado por JavaScript
+3. O objeto XMLHttpRequest envia uma solicitação para um servidor web
+4. O servidor processa a solicitação
+5. O servidor envia uma resposta de volta à página da web
+6. A resposta é lida por JavaScript
+7. A ação adequada (como atualização de página) é realizada por JavaScript
+
+
+**AJAX - O objeto XMLHttpRequest**
+A pedra angular do AJAX é o objeto XMLHttpRequest.
+
+1. Criar um objeto XMLHttpRequest
+2. Definir uma função de retorno de chamada
+3. Abra o objeto XMLHttpRequest
+4. Enviar uma solicitação para um servidor
+
+***Criar um objeto XMLHttpRequest***
+variable = new XMLHttpRequest();
+
+***Define a Callback Function***
+Uma Callback Function é uma função passada como parâmetro para outra função.
+
+Nesse caso, a função de retorno de chamada deve conter o código a ser executado quando a resposta estiver pronta.
+
+xhttp.onload = function() {
+  // What to do when the response is ready
+}
+
+***Send a Request***
+Para enviar uma solicitação para um servidor, você pode usar os métodos open() e send() do XMLHttpRequestobjeto:
+
+xhttp.open("GET", "ajax_info.txt");
+xhttp.send();
+
+**Métodos de objeto XMLHttpRequest**
+Method	                                        Description
+new XMLHttpRequest()	                          Creates a new XMLHttpRequest object
+abort()	                                        Cancels the current request
+getAllResponseHeaders()	                        Returns header information
+getResponseHeader()	                            Returns specific header information
+open(method, url, async, user, psw)	            Specifies the request
+                                                method: the request type GET or POST
+                                                url: the file location
+                                                async: true (asynchronous) or false (synchronous)
+                                                user: optional user name
+                                                psw: optional password
+send()	                                        Sends the request to the server Used for GET requests
+send(string)	                                  Sends the request to the server.Used for POST requests
+setRequestHeader()	                            Adds a label/value pair to the header to be sent
+
+**Propriedades do objeto XMLHttpRequest**
+
+onload - Define a função a ser chamada quando a request for recebida.
+
+onreadystatechange - Define a função a ser chamada quando a propriedade readyState muda.
+
+readyState - 0: Request não inicializada, 1:Conexão com Servidor Estabelecida
+             2: Request Recebida , 3: Processando Request, 4:Request Finalizada, resposta pronta.
+
+responseText - Retorna os dados como uma string.
+
+responseXML - Retorna os dados como um XML.
+
+status - Retorna o numero do status de uma request 
+200: "OK" 
+403: "Forbidden"
+404: "Not Found"
+
+statusText - Retorna o status-text (e.g. "OK" or "Not Found")
+
+
+**A propriedade onload**
+Com o XMLHttpRequestobjeto você pode definir uma função de callback para ser executada quando a requisição receber uma resposta.
+
+A função é definida na onloadpropriedade do XMLHttpRequestobjeto:
+
+Exemplo
+xhttp.onload = function() {
+  document.getElementById("demo").innerHTML = this.responseText;
+}
+xhttp.open("GET", "ajax_info.txt");
+xhttp.send();
+
+**Várias funções de retorno de chamada**
+Se você tiver mais de uma tarefa AJAX em um site, deverá criar uma função para executar o XMLHttpRequestobjeto e uma função de retorno de chamada para cada tarefa AJAX.
+
+A chamada de função deve conter a URL e qual função chamar quando a resposta estiver pronta.
+
+Exemplo
+loadDoc("url-1", myFunction1);
+
+loadDoc("url-2", myFunction2);
+
+function loadDoc(url, cFunction) {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {cFunction(this);}
+  xhttp.open("GET", url);
+  xhttp.send();
+}
+
+function myFunction1(xhttp) {
+  // action goes here
+}
+function myFunction2(xhttp) {
+  // action goes here
+}
+
+**AJAX - XMLHttpRequest**
+O objeto XMLHttpRequest é usado para solicitar dados de um servidor.
+
+Para enviar uma requisição para um servidor, usamos os métodos open() e send() do XMLHttpRequestobjeto:
+
+xhttp.open("GET", "ajax_info.txt", true);
+xhttp.send();
+
+Method	                         Description
+open(method, url, async)	       Specifies the type of request
+                                 method: the type of request: GET or POST
+                                 url: the server (file) location
+                                 async: true (asynchronous) or false (synchronous)
+
+send()	                         Sends the request to the server (used for GET)
+send(string)	                   Sends the request to the server (used for POST)
+
+
+**The url - A File On a Server**
+O parâmetro url do open()método é um endereço para um arquivo em um servidor:
+xhttp.open("GET", "ajax_test.asp", true);
+
+O arquivo pode ser qualquer tipo de arquivo, como .txt e .xml, ou arquivos de script de servidor como .asp e .php (que podem executar ações no servidor antes de enviar a resposta de volta).
+
+
+**Assíncrono - Verdadeiro ou Falso?**
+As solicitações do servidor devem ser enviadas de forma assíncrona.
+O parâmetro assíncrono do método open() deve ser definido como true:
+
+xhttp.open("GET", "ajax_test.asp", true);
+
+Ao enviar de forma assíncrona, o JavaScript não precisa esperar pela resposta do servidor, mas pode:
+
+*executar outros scripts enquanto aguarda a resposta do servidor
+*lidar com a resposta depois que a resposta estiver pronta
+
+O valor padrão para o parâmetro async é async = true.
+Você pode remover com segurança o terceiro parâmetro do seu código.
+O XMLHttpRequest síncrono (async = false) não é recomendado porque o JavaScript parará de ser executado até que a resposta do servidor esteja pronta. Se o servidor estiver ocupado ou lento, o aplicativo irá travar ou parar.
+
+**GET or POST?**
+GET é mais simples e rápido que POST, e pode ser usado na maioria dos casos.
+No entanto, sempre use solicitações POST quando:
+
+*Um arquivo em cache não é uma opção (atualize um arquivo ou banco de dados no servidor).
+*Enviando uma grande quantidade de dados para o servidor (POST não tem limitações de tamanho).
+*Enviando a entrada do usuário (que pode conter caracteres desconhecidos), POST é mais robusto e seguro que GET.
+
+**GET REQUESTS**
+Um simples GET request:
+
+Exemplo
+xhttp.open("GET", "demo_get.asp");
+xhttp.send();
+
+No exemplo acima, você pode obter um resultado em cache. Para evitar isso, adicione um ID exclusivo ao URL:
+
+Exemplo
+xhttp.open("GET", "demo_get.asp?t=" + Math.random());
+xhttp.send();
+
+Se você deseja enviar informações com o GETmétodo, adicione as informações à URL:
+
+Exemplo
+xhttp.open("GET", "demo_get2.asp?fname=Henry&lname=Ford");
+xhttp.send();
+
+**Post Request**
+Um simples POSTpedido:
+
+Exemplo
+xhttp.open("POST", "demo_post.asp");
+xhttp.send();
+
+Para enviar dados como um formulário HTML, adicione um cabeçalho HTTP com setRequestHeader(). Especifique os dados que deseja enviar no send()método:
+
+Exemplo
+xhttp.open("POST", "ajax_test.asp");
+xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhttp.send("fname=Henry&lname=Ford");
+
+**Synchronous Request**
+Para executar uma solicitação síncrona, altere o terceiro parâmetro no open()método para false:
+
+xhttp.open("GET", "ajax_info.txt", false);
+
+Às vezes, async = false é usado para testes rápidos. Você também encontrará solicitações síncronas em códigos JavaScript mais antigos.
+
+Exemplo
+xhttp.open("GET", "ajax_info.txt", false);
+xhttp.send();
+document.getElementById("demo").innerHTML = xhttp.responseText;
+
+**AJAX - SERVER RESPONSE**
+Propriedades de resposta do servidor 
+
+Property	              Description
+responseText	          get the response data as a string
+responseXML	            get the response data as XML data
+
+***A propriedade responseText***
+A responseText  retorna a resposta do servidor como uma string JavaScript e você pode usá-la adequadamente:
+
+Exemplo
+document.getElementById("demo").innerHTML = xhttp.responseText;
+
+**O método getAllResponseHeaders()**
+O getAllResponseHeaders()método retorna todas as informações de cabeçalho da resposta do servidor.
+
+**O método getResponseHeader()**
+O getResponseHeader()método retorna informações de cabeçalho específicas da resposta do servidor.
+
+**AJAX XML Example**
+AJAX pode ser usado para comunicação interativa com um arquivo XML.
+
+***Exemplo explicado***
+Quando um usuário clica no botão "Obter informações do CD" acima, a loadDoc() função é executada.
+
+A loadDoc()função cria um XMLHttpRequestobjeto, adiciona a função a ser executada quando a resposta do servidor estiver pronta e envia a solicitação para o servidor.
+
+Quando a resposta do servidor está pronta, uma tabela HTML é construída, nós (elementos) são extraídos do arquivo XML e, finalmente, ele atualiza o elemento "demo" com a tabela HTML preenchida com dados XML:
+
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {myFunction(this);}
+  xhttp.open("GET", "cd_catalog.xml");
+  xhttp.send();
+}
+function myFunction(xml) {
+  const xmlDoc = xml.responseXML;
+  const x = xmlDoc.getElementsByTagName("CD");
+  let table="<tr><th>Artist</th><th>Title</th></tr>";
+  for (let i = 0; i <x.length; i++) {
+    table += "<tr><td>" +
+    x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("demo").innerHTML = table;
+}
+
+
+**AJAX PHP Example**
+AJAX é usado para criar aplicativos mais interativos.
+
+Exemplo explicado
+No exemplo acima, quando um usuário digita um caractere no campo de entrada, uma função chamada showHint()é executada.
+
+A função é acionada pelo onkeyupevento.
+
+Aqui está o código:
+
+Exemplo
+<p>Start typing a name in the input field below:</p>
+<p>Suggestions: <span id="txtHint"></span></p>
+
+<form>
+First name: <input type="text" onkeyup="showHint(this.value)">
+</form>
+
+<script>
+function showHint(str) {
+  if (str.length == 0) {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  } else {
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function() {
+      document.getElementById("txtHint").innerHTML = this.responseText;
+    }
+  xmlhttp.open("GET", "gethint.php?q=" + str);
+  xmlhttp.send();
+  }
+}
+</script>
+Explicação do código:
+
+Primeiro, verifique se o campo de entrada está vazio (str.length == 0). Se estiver, limpe o conteúdo do espaço reservado txtHint e saia da função.
+
+No entanto, se o campo de entrada não estiver vazio, faça o seguinte:
+
+Criar um objeto XMLHttpRequest
+Crie a função a ser executada quando a resposta do servidor estiver pronta
+Envie a solicitação para um arquivo PHP (gethint.php) no servidor
+Observe que o parâmetro q é adicionado gethint.php?q="+str
+A variável str contém o conteúdo do campo de entrada
+
+
+**O arquivo PHP - "gethint.php"**
+O arquivo PHP verifica uma matriz de nomes e retorna o(s) nome(s) correspondente(s) ao navegador:
+
+<?php
+// Array with names
+$a[] = "Anna";
+$a[] = "Brittany";
+$a[] = "Cinderella";
+$a[] = "Diana";
+$a[] = "Eva";
+$a[] = "Fiona";
+$a[] = "Gunda";
+$a[] = "Hege";
+$a[] = "Inga";
+$a[] = "Johanna";
+$a[] = "Kitty";
+$a[] = "Linda";
+$a[] = "Nina";
+$a[] = "Ophelia";
+$a[] = "Petunia";
+$a[] = "Amanda";
+$a[] = "Raquel";
+$a[] = "Cindy";
+$a[] = "Doris";
+$a[] = "Eve";
+$a[] = "Evita";
+$a[] = "Sunniva";
+$a[] = "Tove";
+$a[] = "Unni";
+$a[] = "Violet";
+$a[] = "Liza";
+$a[] = "Elizabeth";
+$a[] = "Ellen";
+$a[] = "Wenche";
+$a[] = "Vicky";
+
+// get the q parameter from URL
+$q = $_REQUEST["q"];
+
+$hint = "";
+
+// lookup all hints from array if $q is different from ""
+if ($q !== "") {
+  $q = strtolower($q);
+  $len=strlen($q);
+  foreach($a as $name) {
+    if (stristr($q, substr($name, 0, $len))) {
+      if ($hint === "") {
+        $hint = $name;
+      } else {
+        $hint .= ", $name";
+      }
+    }
+  }
+}
+
+// Output "no suggestion" if no hint was found or output correct values
+echo $hint === "" ? "no suggestion" : $hint;
+?>
+
+**ASP AJAX**
