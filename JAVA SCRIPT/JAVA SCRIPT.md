@@ -2835,3 +2835,107 @@ echo $hint === "" ? "no suggestion" : $hint;
 ?>
 
 **ASP AJAX**
+Exemplo de ASP AJAX
+O exemplo a seguir demonstrará como uma página da Web pode se comunicar com um servidor da Web enquanto um usuário digita caracteres em um campo de entrada:
+Exemplo
+Start typing a name in the input field below:
+
+Suggestions: Anna , Amanda
+
+First name: A
+
+***Exemplo explicado***
+No exemplo acima, quando um usuário digita um caractere no campo de entrada, uma função chamada showHint()é executada.
+
+A função é acionada pelo ***onkeyup*** .
+
+Aqui está o código:
+
+Exemplo
+
+<p>Start typing a name in the input field below:</p>
+<p>Suggestions: <span id="txtHint"></span></p>
+
+<form>
+First name: <input type="text" onkeyup="showHint(this.value)">
+</form>
+
+<script>
+function showHint(str) {
+  if (str.length == 0) {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  } else {
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function() {
+      document.getElementById("txtHint").innerHTML = this.responseText;
+    }
+  xmlhttp.open("GET", "gethint.asp?q=" + str);
+  xmlhttp.send();
+  }
+}
+</script>
+Explicação do código:
+
+Primeiro, verifique se o campo de entrada está vazio (str.length == 0). Se estiver, limpe o conteúdo do espaço reservado txtHint e saia da função.
+
+No entanto, se o campo de entrada não estiver vazio, faça o seguinte:
+
+Criar um objeto XMLHttpRequest
+Crie a função a ser executada quando a resposta do servidor estiver pronta
+Envie a solicitação para um arquivo ASP (gethint.asp) no servidor
+Observe que o parâmetro q é adicionado gethint.asp?q="+str
+A variável str contém o conteúdo do campo de entrada
+
+**AJAX Database Example**
+AJAX pode ser usado para comunicação interativa com um banco de dados.
+
+A função showCustomer()
+Quando um usuário seleciona um cliente na lista suspensa acima, uma função chamada showCustomer()é executada. A função é acionada pelo onchange:
+
+mostrarCliente
+function showCustomer(str) {
+  if (str == "") {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  }
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("txtHint").innerHTML = this.responseText;
+  }
+  xhttp.open("GET", "getcustomer.php?q="+str);
+  xhttp.send();
+}
+
+A showCustomer()função faz o seguinte:
+
+Verifique se um cliente está selecionado
+Criar um objeto XMLHttpRequest
+Crie a função a ser executada quando a resposta do servidor estiver pronta
+Envie a solicitação para um arquivo no servidor
+Observe que um parâmetro (q) é adicionado à URL (com o conteúdo da lista suspensa)
+
+**Exemplos AJAX**
+The XMLHttpRequest Object
+<html>
+<body>
+
+<div id="demo">
+<h2>The XMLHttpRequest Object</h2>
+<button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+
+<script>
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("demo").innerHTML =
+    this.responseText;
+  }
+  xhttp.open("GET", "ajax_info.txt");
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
