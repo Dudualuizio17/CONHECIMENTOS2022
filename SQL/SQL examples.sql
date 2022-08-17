@@ -717,3 +717,224 @@ INTO CustomersOrderBackup2017
 FROM Customers
 LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
 
+
+
+SQL UNIQUE Constraint
+A UNIQUE garante que todos os valores em uma coluna sejam diferentes.
+A UNIQUE e PRIMARY KEY fornecem uma garantia de exclusividade para uma coluna ou conjunto de colunas.
+Uma PRIMARY KEY automaticamente tem uma UNIQUE.
+Porém, você pode ter muitas UNIQUE  por tabela, mas apenas uma PRIMARY KEY por tabela.
+
+SQL UNIQUE em CREATE TABLE
+--O SQL a seguir cria uma UNIQUE na coluna "ID" quando a tabela "Persons" é criada:
+SQL Server / Oracle / MS Access:
+
+CREATE TABLE Persons (
+    ID int NOT NULL UNIQUE,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int
+);
+
+MySQL:
+
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    UNIQUE (ID)
+);
+
+--Para nomear uma UNIQUE e definir uma UNIQUE em várias colunas, use a seguinte sintaxe SQL:
+
+MySQL / SQL Server / Oracle / MS Access:
+
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    CONSTRAINT UC_Person UNIQUE (ID,LastName)
+);
+
+SQL UNIQUE em ALTER TABLE
+--Para criar uma UNIQUErestrição na coluna "ID" quando a tabela já estiver criada, use o seguinte SQL:
+
+MySQL / SQL Server / Oracle / MS Access:
+
+ALTER TABLE Persons
+ADD UNIQUE (ID);
+
+--Para nomear uma UNIQUE e definir uma UNIQUE em várias colunas, use a seguinte sintaxe SQL:
+
+MySQL / SQL Server / Oracle / MS Access:
+
+ALTER TABLE Persons
+ADD CONSTRAINT UC_Person UNIQUE (ID,LastName);
+
+DROP a UNIQUE Constraint
+--Para eliminar uma UNIQUE, use o seguinte SQL:
+
+--MySQL:
+ALTER TABLE Persons
+DROP INDEX UC_Person;
+
+--SQL Server / Oracle / MS Access:
+ALTER TABLE Persons
+DROP CONSTRAINT UC_Person;
+
+SQL PRIMARY KEY Constraint
+
+A PRIMARY KEY identifica exclusivamente cada registro em uma tabela.
+A chaves primárias devem conter valores UNIQUE e não podem conter valores NULL.
+Uma tabela pode ter apenas UMA chave primária; e na tabela,
+essa chave primária pode consistir em uma ou várias colunas (campos).
+
+SQL PRIMARY KEY em CREATE TABLE
+O SQL a seguir cria um PRIMARY KEY na coluna "ID" quando a tabela "Persons" é criada:
+
+--MySQL:
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    PRIMARY KEY (ID)
+);
+
+--SQL Server / Oracle / MS Access:
+CREATE TABLE Persons (
+    ID int NOT NULL PRIMARY KEY,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int
+);
+
+--Para permitir a nomeação de uma PRIMARY KEY e para definir uma PRIMARY KEY em várias colunas
+--use a seguinte sintaxe SQL:
+
+--MySQL / SQL Server / Oracle / MS Access:
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    CONSTRAINT PK_Person PRIMARY KEY (ID,LastName)
+);
+--Nota: No exemplo acima existe apenas UM PRIMARY KEY(PK_Person). 
+--Porém, o VALOR da chave primária é composto por DUAS COLUNAS (ID + Sobrenome).
+
+
+PRIMARY KEY em ALTER TABLE
+--Para criar uma PRIMARY KEY na coluna "ID" quando a tabela já estiver criada, use o seguinte SQL:
+ALTER TABLE Persons
+ADD PRIMARY KEY (ID);
+
+--Para permitir a nomeação de uma PRIMARY KEY
+--E para definir uma PRIMARY KEY em várias colunas, use a seguinte sintaxe SQL:
+ALTER TABLE Persons
+ADD CONSTRAINT PK_Person PRIMARY KEY (ID,LastName);
+
+
+DROP a PRIMARY KEY Constraint
+--Para eliminar uma PRIMARY KEYrestrição, use o seguinte SQL:
+
+--MySQL:
+ALTER TABLE Persons
+DROP PRIMARY KEY;
+
+--SQL Server / Oracle / MS Access:
+ALTER TABLE Persons
+DROP CONSTRAINT PK_Person;
+
+SQL FOREIGN KEY Constraint
+A FOREIGN KEY  é usada para evitar ações que destruam links entre tabelas.
+
+A FOREIGN KEY é um campo (ou coleção de campos) em uma tabela, que se refere a PRIMARY KEY em outra tabela.
+
+A tabela com a chave estrangeira é chamada de tabela filha
+A tabela com a chave primária é chamada de tabela referenciada ou pai.
+
+--Observe as duas tabelas a seguir:
+
+--Tabela de pessoas
+PersonID	   LastName	   FirstName	      Age
+   1	        Hansen	     Ola	          30
+   2	        Svendson	   Tove	          23
+   3	        Pettersen	   Kari	          20
+
+--Tabela de pedidos
+OrderID	     OrderNumber	    PersonID
+   1	         77895	           3
+   2	         44678	           3
+   3	         22456	           2
+   4	         24562	           1
+
+Observe que a coluna "PersonID" na tabela "Pedidos" aponta para a coluna "PersonID" na tabela "Pessoas".
+A coluna "PersonID" na tabela "Persons" está PRIMARY KEY na tabela "Persons".
+A coluna "PersonID" na tabela "Pedidos" está FOREIGN KEY na tabela "Pedidos".
+A FOREIGN KEY impede que dados inválidos sejam inseridos na coluna de chave estrangeira,
+pois deve ser um dos valores contidos na tabela pai.
+
+
+FOREIGN KEY em CREATE TABLE
+--O SQL a seguir cria um FOREIGN KEY na coluna "PersonID" quando a tabela "Orders" é criada:
+
+--MySQL:
+CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+);
+
+--SQL Server / Oracle / MS Access:
+CREATE TABLE Orders (
+    OrderID int NOT NULL PRIMARY KEY,
+    OrderNumber int NOT NULL,
+    PersonID int FOREIGN KEY REFERENCES Persons(PersonID)
+);
+
+--Para permitir a nomeação de uma FOREIGN KEY e para definir uma FOREIGN KEY em várias colunas, 
+--use a seguinte sintaxe SQL:
+
+--MySQL / SQL Server / Oracle / MS Access:
+CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    CONSTRAINT FK_PersonOrder FOREIGN KEY (PersonID)
+    REFERENCES Persons(PersonID)
+);
+
+FOREIGN KEY em ALTER TABLE
+--Para criar uma FOREIGN KEY na coluna "PersonID" quando a tabela "Orders" já estiver criada,
+--use o seguinte SQL:
+
+--MySQL / SQL Server / Oracle / MS Access:
+ALTER TABLE Orders
+ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
+
+--Para permitir a nomeação de uma FOREIGN KEY e para definir uma FOREIGN KEY em várias colunas,
+--use a seguinte sintaxe SQL:
+
+--MySQL / SQL Server / Oracle / MS Access:
+ALTER TABLE Orders
+ADD CONSTRAINT FK_PersonOrder
+FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
+
+
+DROP EM FOREIGN KEY:
+
+--Para eliminar uma FOREIGN KEY, use o seguinte SQL:
+
+--MySQL:
+ALTER TABLE Orders
+DROP FOREIGN KEY FK_PersonOrder;
+
+--SQL Server / Oracle / MS Access:
+ALTER TABLE Orders
+DROP CONSTRAINT FK_PersonOrder;
