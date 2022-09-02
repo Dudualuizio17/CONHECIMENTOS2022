@@ -32,3 +32,9 @@ node + nome do arquivo
 
 **Executar o arquivo no console:**
 Botão direito no arquivo, "OPEN INTEGRATED TERMINAL" vai apontar direto para o arquivo desejado.
+
+**Executar**
+Windowns + r
+
+**Abrir itens copiados**
+Windows + v
