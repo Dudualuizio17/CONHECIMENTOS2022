@@ -35,13 +35,8 @@
 			"libs": {
 				"sap.ui.core": {},
 				"sap.m": {}
-			},
-			"contentDensities": {
-			  "compact": true,
-			  "cozy": true
 			}
 		},
-		
 		"models": {
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
@@ -58,40 +53,6 @@
 				"uri": "Invoices.json"
 			}
 		},
-		
-		"routing": {
-			"config": {
-				"routerClass": "sap.m.routing.Router",
-				"type": "View",
-				"viewType": "XML",
-				"path": "sap.ui.demo.walkthrough.view",
-				"controlId": "app",
-				"controlAggregation": "pages"
-			},
-			"routes": [
-				{
-					"pattern": "",
-					"name": "overview",
-					"target": "overview"
-				},
-				{
-					"pattern": "detail/{invoicePath}",
-					"name": "detail",
-					"target": "detail"
-				}
-			],
-			"targets": {
-				"overview": {
-					"id": "overview",
-					"name": "Overview"
-				},
-				"detail": {
-					"id": "detail",
-					"name": "Detail"
-				}
-			}
-		},
-
 		"resources": {
 			"css": [
 				{
